@@ -1,4 +1,4 @@
-package com.nlp.tic_tac_poe;
+package com.nlp.tic_tac_poe.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.nlp.tic_tac_poe.R;
+import com.nlp.tic_tac_poe.Study;
+
 import java.util.List;
 
 public class StudyAdapter extends ArrayAdapter<Study> {

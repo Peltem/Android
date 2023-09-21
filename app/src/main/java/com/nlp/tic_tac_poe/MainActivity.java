@@ -1,27 +1,15 @@
 package com.nlp.tic_tac_poe;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.Toast;
-import java.util.ArrayList;
 
+import com.nlp.tic_tac_poe.adapters.StudyAdapter;
 
 import java.util.ArrayList;
 
@@ -39,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, Pari);
         spiPar.setAdapter(adapter);
         setInitialData();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.main_fragment, new StudyListFragment(), "study_list_fragment")
+                .commit();
 
         StudyAdapter studyAdapter = new StudyAdapter(this, R.layout.list_item, studies);
 
